@@ -1,4 +1,4 @@
-import { UserType } from "@/helpers/modelTypes";
+import { UserType } from "@/utils/modelTypes";
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema<UserType>({

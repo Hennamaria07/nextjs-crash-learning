@@ -2,7 +2,7 @@ import { dbConnect } from "@/dbConfig/dbConnect";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { UserType } from "@/helpers/modelTypes";
+import { UserType } from "@/utils/modelTypes";
 
 dbConnect();
 

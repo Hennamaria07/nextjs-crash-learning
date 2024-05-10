@@ -2,7 +2,7 @@ import { dbConnect } from "@/dbConfig/dbConnect";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
-import { UserType } from "@/helpers/modelTypes";
+import { UserType } from "@/utils/modelTypes";
 import jwt from "jsonwebtoken"
 
 dbConnect();
@@ -60,6 +60,9 @@ export const POST = async (req: NextRequest) => {
             {
                 success: true,
                 message: "User login successfully"
+            },
+            {
+                status: 200
             }
         )
         res.cookies.set("token", accessToken, {httpOnly: true, secure: true});
