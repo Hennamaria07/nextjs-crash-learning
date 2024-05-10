@@ -6,12 +6,19 @@ import Link from "next/link";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { error } from "console";
+import { useRouter } from "next/navigation";
 
 const Navbar = ({ className }: { className?: string }) => {
+    const navigate = useRouter();
     const [active, setActive] = useState<string | null>(null);
     const handleLogout = () => {
         axios.get('/api/users/logout', {withCredentials: true})
-        .then((res) => toast.success(res.data.message))
+        .then((res) => {
+            toast.success(res.data.message, {duration: 1000})
+            setTimeout(()=>{
+                navigate.push('/login')
+              }, 1000)
+    })
         .catch((error) => toast.error(error.response.data.error))
     }
     return (
