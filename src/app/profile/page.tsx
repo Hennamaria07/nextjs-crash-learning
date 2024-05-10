@@ -2,10 +2,8 @@
 import Navbar from '@/components/Navbar'
 import { UserType } from '@/utils/modelTypes';
 import axios from 'axios';
-import { error } from 'console';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
-import toast from 'react-hot-toast';
 
 const ProfilePage = () => {
   const [user, setUser] = useState<UserType | null>(null);

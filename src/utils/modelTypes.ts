@@ -9,6 +9,6 @@ export interface UserType {
     isAdmin: boolean;
     forgotPasswordToken?: string;
     forgotPasswordExpiry?: Date;
-    VerifiedToken?: string;
+    verifiedToken?: string;
     verifiedTokenExpiry?: Date;
 }

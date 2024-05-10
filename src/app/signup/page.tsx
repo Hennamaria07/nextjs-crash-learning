@@ -21,10 +21,17 @@ const SignupPage = () => {
             axios.post('/api/users/signup', data)
                 .then((res) => {
                     setLoading(false)
-                    toast.success(res.data.message, {duration: 1000});
-                    setTimeout(()=>{
-                        navigate.push('/login')
-                    }, 1000)
+                    toast.success('Please check your email and click on the verification link to complete the sign-up process.', {
+                        style: {
+                          border: '1px solid #713200',
+                          padding: '16px',
+                          color: '#713200',
+                        },
+                        iconTheme: {
+                          primary: '#713200',
+                          secondary: '#FFFAEE',
+                        },
+                      });
                 })
                 .catch((err) => {
                     setLoading(false)
